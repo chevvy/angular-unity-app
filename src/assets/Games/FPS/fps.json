@@ -1,0 +1,14 @@
+{
+  "config": {
+    "companyName": "DefaultCompany",
+    "productName": "testFps",
+    "productVersion": "",
+    "buildUrl": "",
+    "loaderUrl": "",
+    "dataUrl": "",
+    "frameworkUrl": "",
+    "codeUrl": "",
+    "streamingAssetsUrl": "",
+    "devicePixelRatio": null
+  }
+}
