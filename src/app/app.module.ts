@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FpsTemplateComponent } from './fps-template/fps-template.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FpsTemplateComponent
   ],
   imports: [
     BrowserModule,

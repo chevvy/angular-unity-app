@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-unity-app"
+    }
+  },
+  "defaultProject": "angular-unity-app",
+  "cli": {
+    "analytics": "55eccb6d-b7c3-4aef-b321-cdc9c33e6c57"
+  }
 }
