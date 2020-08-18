@@ -7,7 +7,7 @@ declare var createUnityInstance;
   styleUrls: ['./fps-template.component.scss']
 })
 export class FpsTemplateComponent implements OnInit {
-  currentUnityInstance: any;
+  UnityInstance: any;
 
   constructor() { }
 
@@ -20,40 +20,34 @@ export class FpsTemplateComponent implements OnInit {
       codeUrl: buildUrl + '/buildWeb.wasm',
       streamingAssetsUrl: 'StreamingAssets',
       companyName: 'DefaultCompany',
-      productName: 'testPlatformer',
+      productName: 'shootyMcShot',
       productVersion: '0.1',
       devicePixelRatio: null,
     };
 
-    const container = document.querySelector('#unity-container');
-    const canvas = document.querySelector('#unity-canvas');
-    const loadingBar = document.querySelector('#unity-loading-bar');
-    const progressBarFull = document.querySelector('#unity-progress-bar-full');
-    const fullscreenButton = document.querySelector('#unity-fullscreen-button');
+    const container: HTMLElement = document.querySelector('#unity-container');
+    const canvas: HTMLElement = document.querySelector('#unity-canvas');
+    const loadingBar: HTMLElement = document.querySelector('#unity-loading-bar');
+    const progressBarFull: HTMLElement = document.querySelector('#unity-progress-bar-full');
+    const fullscreenButton: HTMLElement = document.querySelector('#unity-fullscreen-button');
 
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
       container.className = 'unity-mobile';
       config.devicePixelRatio = 1;
     } else {
-      // @ts-ignore
       canvas.style.width = '960px';
-      // @ts-ignore
       canvas.style.height = '600px';
     }
-    // @ts-ignore
     loadingBar.style.display = 'block';
 
     const script = document.createElement('script');
     script.src = loaderUrl;
 
     createUnityInstance(canvas, config, (progress) => {
-      // @ts-ignore
       progressBarFull.style.width = 100 * progress + '%';
     }).then((unityInstance) => {
-      this.currentUnityInstance = unityInstance;
-      // @ts-ignore
+      this.UnityInstance = unityInstance;
       loadingBar.style.display = 'none';
-      // @ts-ignore
       fullscreenButton.onclick = () => {
         unityInstance.SetFullscreen(1);
       };
@@ -63,6 +57,6 @@ export class FpsTemplateComponent implements OnInit {
   }
 
   killEnemy() {
-    this.currentUnityInstance.SendMessage('Enemy_HoverBot', 'OnDie');
+    this.UnityInstance.SendMessage('Enemy_HoverBot', 'OnDie');
   }
 }
