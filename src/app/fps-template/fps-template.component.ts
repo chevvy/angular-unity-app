@@ -7,6 +7,7 @@ declare var createUnityInstance;
   styleUrls: ['./fps-template.component.scss']
 })
 export class FpsTemplateComponent implements OnInit {
+  currentUnityInstance: any;
 
   constructor() { }
 
@@ -49,6 +50,7 @@ export class FpsTemplateComponent implements OnInit {
       // @ts-ignore
       progressBarFull.style.width = 100 * progress + '%';
     }).then((unityInstance) => {
+      this.currentUnityInstance = unityInstance;
       // @ts-ignore
       loadingBar.style.display = 'none';
       // @ts-ignore
@@ -58,5 +60,9 @@ export class FpsTemplateComponent implements OnInit {
     }).catch((message) => {
       alert(message);
     });
+  }
+
+  killEnemy() {
+    this.currentUnityInstance.SendMessage('Enemy_HoverBot', 'OnDie');
   }
 }
