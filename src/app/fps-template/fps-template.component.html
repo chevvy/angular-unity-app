@@ -1,6 +1,3 @@
-<!--<script>-->
-<!--  import '../cb-game/Build/cbtest2.loader';-->
-<!--</script>-->
 <div id="unity-container" class="unity-desktop">
   <canvas id="unity-canvas"></canvas>
   <div id="unity-loading-bar">
@@ -11,8 +8,13 @@
   </div>
   <div id="unity-footer">
     <div id="unity-webgl-logo"></div>
-    <div id="unity-fullscreen-button"></div>
-    <div id="unity-build-title">Shooter pew pew pew</div>
+
   </div>
-  <button (click)="killEnemy()">Kill big meanie</button>
 </div>
+<div> Cliquez sur le bouton "kill big meanie" pour tuer le premier ennemi </div>
+<div class="options">
+  <button (click)="killEnemy()">Kill big meanie</button>
+  <div id="unity-fullscreen-button"></div>
+  <div> <--- treat yo self with some fullscreen, you deserve it ! </div>
+</div>
+
