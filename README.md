@@ -1,4 +1,8 @@
 # AngularUnityApp
+Small test project for deploying Unity web build as modular component inside an Angular App.
+Also includes a demo of basic interaction between the web app and the game (you can try clicking the button below the game window to check it out :) )
+
+Still a biiig WIP. Proper documentation still to come!
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
